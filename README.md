@@ -5,6 +5,9 @@ This is a tiny web app, which helped me to learn [React](https://reactjs.org) an
 ## Demo
 [https://justusjonas74.github.io/vag-departures/](https://justusjonas74.github.io/vag-departures/)
 
+## Screenshots
+![Screenshot 1](docs/img/screenshot.png?raw=true)
+
 ## Prerequisites
 You've need [Node.js](https://nodejs.org/) installed.
 
