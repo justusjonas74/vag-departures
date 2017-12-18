@@ -9,7 +9,7 @@ This is a tiny web app, which helped me to learn [React](https://reactjs.org) an
 ![Screenshot 1](docs/img/screenshot.png?raw=true)
 
 ## Prerequisites
-You've need [Node.js](https://nodejs.org/) installed.
+You need [Node.js](https://nodejs.org/) installed on your machine.
 
 ## Install
 
