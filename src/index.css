@@ -96,54 +96,62 @@ textarea {
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
+
 body {
-       background-image: url("img/doodles.png");
-       background-repeat: repeat;
+    background-image: url("img/doodles.png");
+    background-repeat: repeat;
 }
 
-.contentContainer{
-  margin-top: 70px;
-  margin-bottom: 10%;
-  background-color: white;
-  border-radius: 15px;
-  padding: 25px;
-  border: 1px solid #dddddd;
+.contentContainer {
+    margin-top: 70px;
+    margin-bottom: 10%;
+    background-color: white;
+    border-radius: 15px;
+    padding: 25px;
+    border: 1px solid #dddddd;
 }
 
 #root {
-  margin-top: 0.5rem;
+    margin-top: 0.5rem;
 }
 
 h2 {
-  margin-bottom: 20px;
-}
-#headerImage {
-  margin-bottom: 1rem;
-  width: 100%;
-  border-radius: 5px;
+    margin-bottom: 20px;
 }
 
-#loadingSpinner{
-  position: absolute;
-  margin-left: -40px;
-  z-index: 99999;
-  line-height: 2.3rem;
+.nowrap {
+    white-space: nowrap;
+}
+
+#headerImage {
+    margin-bottom: 1rem;
+    width: 100%;
+    border-radius: 5px;
+}
+
+#loadingSpinner {
+    position: absolute;
+    margin-left: -40px;
+    z-index: 99999;
+    line-height: 2.3rem;
 }
 
 .react-autosuggest__container {
-  position: relative;
-  display: inline-flex;
-  width: 100%;
+    position: relative;
+    display: inline-flex;
+    width: 100%;
 
 }
-.LoadingSpinnerContainer{
-  width: 100%;
-  margin-top: 10%;
-  text-align: center;
+
+.LoadingSpinnerContainer {
+    width: 100%;
+    margin-top: 10%;
+    text-align: center;
 }
+
 .react-autosuggest__input {
-height: 30px;
-/*  width: 240px;
+    height: 30px;
+    /*  width: 240px;
 
   padding: 10px 20px;
   font-family: Helvetica, sans-serif;
@@ -154,87 +162,89 @@ height: 30px;
 }
 
 .react-autosuggest__input--focused {
-  outline: none;
+    outline: none;
 }
 
 .react-autosuggest__input--open {
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
 }
 
 .react-autosuggest__suggestions-container {
-  display: none;
+    display: none;
 }
 
 .react-autosuggest__suggestions-container--open {
-  display: block;
-  position: absolute;
-  top: 38px;
-  width: 100%;
-  border: 1px solid #aaa;
-  background-color: #fff;
-  border-bottom-left-radius: 4px;
-  border-bottom-right-radius: 4px;
-  z-index: 2;
+    display: block;
+    position: absolute;
+    top: 38px;
+    width: 100%;
+    border: 1px solid #aaa;
+    background-color: #fff;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    z-index: 2;
 }
 
 .react-autosuggest__suggestions-list {
-  margin: 0;
-  padding: 0;
-  list-style-type: none;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
 }
 
 .react-autosuggest__suggestion {
-  cursor: pointer;
-  padding: 10px 50px;
-  }
+    cursor: pointer;
+    padding: 10px 50px;
+}
 
 .react-autosuggest__suggestion--highlighted {
-  background-color: #ddd;
+    background-color: #ddd;
 }
 
 .deapartureContainer {
-  margin-top: 30px;
+    margin-top: 30px;
 }
 
 
 .departureRow .departureTime {
-  font-size: 1.2rem;
-  font-weight: bold;
+    font-size: 1.2rem;
+    font-weight: bold;
 }
 
 .departureRow .departureDelay {
-  padding-left: 0.3rem;
-  font-size: 0.8rem;
+    padding-left: 0.3rem;
+    font-size: 0.8rem;
 }
 
-.departureRow .departureTransitType {
-}
+.departureRow .departureTransitType {}
+
 .departureRow .departureDelay.isDelayed {
-  color: red;
-  font-weight: bold;
+    color: red;
+    font-weight: bold;
 }
 
 .departureRow .departureDelay.isInTime {
-  color: green;
+    color: green;
 }
 
 .departureRow .departureLine {
-  margin-left: 3px;
-  color: white;
-  font-weight: bold;
-  padding:  1px 5px;
-  border-radius: 5px;
+    margin-left: 3px;
+    color: white;
+    font-weight: bold;
+    padding: 1px 5px;
+    border-radius: 5px;
 }
 
 .departureRow .departureLine.ubahn {
-  background-color: #006291;
+    background-color: #006291;
 }
+
 .departureRow .departureLine.tram {
-  background-color: #852D6D;
+    background-color: #852D6D;
 }
+
 .departureRow .departureLine.bus {
-  background-color: #E4342E;
+    background-color: #E4342E;
 }
 
 /* ==========================================================================
@@ -269,7 +279,8 @@ height: 30px;
     padding: 0;
     position: absolute;
     width: 1px;
-    white-space: nowrap; /* 1 */
+    white-space: nowrap;
+    /* 1 */
 }
 
 /*
@@ -313,8 +324,10 @@ height: 30px;
 
 .clearfix:before,
 .clearfix:after {
-    content: " "; /* 1 */
-    display: table; /* 2 */
+    content: " ";
+    /* 1 */
+    display: table;
+    /* 2 */
 }
 
 .clearfix:after {
@@ -332,9 +345,9 @@ height: 30px;
 }
 
 @media print,
-       (-webkit-min-device-pixel-ratio: 1.25),
-       (min-resolution: 1.25dppx),
-       (min-resolution: 120dpi) {
+(-webkit-min-device-pixel-ratio: 1.25),
+(min-resolution: 1.25dppx),
+(min-resolution: 120dpi) {
     /* Style adjustments for high resolution devices */
 }
 
@@ -349,7 +362,8 @@ height: 30px;
     *:before,
     *:after {
         background: transparent !important;
-        color: #000 !important; /* Black prints faster:
+        color: #000 !important;
+        /* Black prints faster:
                                    http://www.sanbeiji.com/archives/953 */
         box-shadow: none !important;
         text-shadow: none !important;
@@ -372,7 +386,6 @@ height: 30px;
      * Don't show links that are fragment identifiers,
      * or use the `javascript:` pseudo protocol
      */
-
     a[href^="#"]:after,
     a[href^="javascript:"]:after {
         content: "";
@@ -391,7 +404,6 @@ height: 30px;
      * Printing Tables:
      * http://css-discuss.incutio.com/wiki/Printing_Tables
      */
-
     thead {
         display: table-header-group;
     }
