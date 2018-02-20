@@ -78,9 +78,11 @@ function styleTransitType(departureTransitType) {
 
 const renderInputComponent = inputProps => (
     <div className="input-group">
-    <div className="input-group-addon">
-      <i className="fa fa-search"></i>
-    </div>
+        <div className="input-group-prepend">
+            <div className="input-group-text">
+                <i className="fa fa-search"></i>
+            </div>
+        </div>
     <input {...inputProps} />
   </div>
 )
