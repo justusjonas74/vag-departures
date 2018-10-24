@@ -3,14 +3,15 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "ajv": "^6.5.4",
     "axios": "^0.17.1",
     "bootstrap": "^4.0.0",
     "gh-pages": "^1.1.0",
-    "react": "^16.2.0",
+    "react": "^16.6.0",
     "react-autosuggest": "^9.3.2",
-    "react-dom": "^16.2.0",
+    "react-dom": "^16.6.0",
     "react-github-corner": "^2.1.0",
-    "react-scripts": "1.1.5",
+    "react-scripts": "2.0.5",
     "strftime": "^0.10.0"
   },
   "scripts": {
@@ -39,5 +40,11 @@
   "bugs": {
     "url": "https://github.com/justusjonas74/vag-departures/issues"
   },
-  "homepage": "https://justusjonas74.github.io/vag-departures"
+  "homepage": "https://justusjonas74.github.io/vag-departures",
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
 }
