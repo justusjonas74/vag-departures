@@ -134,9 +134,11 @@ class DepartureTable extends Component {
                 <div className="deapartureContainer">
             <table className="table table-striped<">
               <thead>
-                <th>Time</th>
-                <th>Line</th>
-                <th>Direction</th>
+                <tr>
+                  <th>Time</th>
+                  <th>Line</th>
+                  <th>Direction</th>
+                </tr>
               </thead>
               <tbody>
                 {rows}
