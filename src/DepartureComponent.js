@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import ls from 'local-storage'
 import './DepartureComponent.css'
 
 import LoadingSpinner from './LoadingSpinner'
@@ -7,15 +8,15 @@ import SearchStopField from './SearchStopField'
 import DepartureTable from './DepartureTable'
 import LastStops from './LastStops'
 
-const fakeData = [{
-        "Haltestellenname": "Am Bauernfeld (Nürnberg)",
-        "VGNKennung": 1653
-    },
-    {
-        "Haltestellenname": "Bauernfeindstr. (Nürnberg)",
-        "VGNKennung": 1550
-    }
-]
+// const fakeData = [{
+//         "Haltestellenname": "Am Bauernfeld (Nürnberg)",
+//         "VGNKennung": 1653
+//     },
+//     {
+//         "Haltestellenname": "Bauernfeindstr. (Nürnberg)",
+//         "VGNKennung": 1550
+//     }
+// ]
 
 // const arraymove = (arr, fromIndex, toIndex = null) => {
 //     toIndex = toIndex || arr.length - 1 
@@ -34,12 +35,19 @@ class DepartureComponent extends Component {
         this.state = {
             departures: [],
             //stop_id: 0,
-            lastStops: fakeData,
+            actualStop: null,
+            lastStops: [],
             loadingDepartures: false
         };
         this.handleNewSelectedStop = this.handleNewSelectedStop.bind(this);
     }
     // TODO: LOGIC SHOULD BE MOVED TO THE DEPARTURE TABLE
+    
+    componentDidMount() {
+        this.setState({
+            lastStops: ls.get('lastStops') || []
+        });
+    }
     
     addNewLastStopItemToState(lastStop) {
        this.setState(prevState => {
@@ -50,7 +58,9 @@ class DepartureComponent extends Component {
            } else {
               if (prevState.lastStops.length > 2) { prevState.lastStops.shift()}
            }
-           return {lastStops : [...prevState.lastStops, lastStop]} 
+           const returnValue = [...prevState.lastStops, lastStop]
+           ls.set('lastStops', returnValue)
+           return {lastStops : returnValue } 
        });
     }
 
@@ -69,14 +79,16 @@ class DepartureComponent extends Component {
             })
             .then(
                 (result) => {
-                    this.setState({
-                        loadingDepartures: false,
-                        departures: result.data.Abfahrten,
-                    })
+                
                     const lastStop = {
                         "Haltestellenname": result.data.Haltestellenname,
                         "VGNKennung": result.data.VGNKennung
                     }
+                    this.setState({
+                        loadingDepartures: false,
+                        departures: result.data.Abfahrten,
+                        actualStop: lastStop
+                    })
                     this.addNewLastStopItemToState(lastStop)
 
                 },
@@ -103,11 +115,12 @@ class DepartureComponent extends Component {
 
     render() {
         const departures = this.state.departures;
+        const stopName = this.state.actualStop ? this.state.actualStop.Haltestellenname : ""
         return (
             <div className="departureComponent">
             <SearchStopField handleNewSelectedStop={this.handleNewSelectedStop} />
             <LastStops lastStops={this.state.lastStops} searchStop={this.handleSearchStop.bind(this)} />
-            <DepartureTable departures={departures}/>
+            <DepartureTable departures={departures} Haltestellenname={stopName}/>
             <LoadingSpinner show={this.state.loadingDepartures} />
           </div>
         )

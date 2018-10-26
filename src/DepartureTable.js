@@ -113,7 +113,7 @@ class DepartureTable extends Component {
     render() {
         const rows = [];
         const departures = this.props.departures;
-
+        const stopName = this.props.Haltestellenname
         departures.forEach((item, index) => {
             const delay = checkDepartureDelay(item.AbfahrtszeitSoll, item.AbfahrtszeitIst);
             rows.push(
@@ -131,7 +131,8 @@ class DepartureTable extends Component {
         }
         else {
             return (
-                <div className="deapartureContainer">
+            <div className="deapartureContainer">
+            <h3><i className="fa fa-map-marker" aria-hidden="true"></i> {stopName}</h3>
             <table className="table table-striped<">
               <thead>
                 <tr>

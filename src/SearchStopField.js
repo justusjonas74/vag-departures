@@ -137,7 +137,7 @@ class SearchStopField extends Component {
         //
         // Finally, render it!
         return (
-            <div>
+            <div className="SearchStopField">
         <Autosuggest
           suggestions={suggestions}
           onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}

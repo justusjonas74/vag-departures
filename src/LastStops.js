@@ -24,9 +24,10 @@ function StopList(props) {
 
 
 const formatOutput = (lastStops, searchStop) =>  {
-      return (
+    // <small><em>History:</em></small>
+    return (
          <div className="LastStopsContainer">
-          <p>Your last searched stops:</p>
+          
           <StopList stops={lastStops} searchStop={searchStop}/>
         </div>
       )
