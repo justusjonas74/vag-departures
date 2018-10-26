@@ -17,6 +17,17 @@ const fakeData = [{
     }
 ]
 
+// const arraymove = (arr, fromIndex, toIndex = null) => {
+//     toIndex = toIndex || arr.length - 1 
+//     var element = arr[fromIndex];
+//     arr.splice(fromIndex, 1);
+//     arr.splice(toIndex, 0, element);
+// }
+
+const getIndexOfLastStopArrayItem = (stop,arr) => {
+   return arr.findIndex(s => s.VGNKennung === stop.VGNKennung)
+}
+
 class DepartureComponent extends Component {
     constructor(props) {
         super(props);
@@ -29,12 +40,26 @@ class DepartureComponent extends Component {
         this.handleNewSelectedStop = this.handleNewSelectedStop.bind(this);
     }
     // TODO: LOGIC SHOULD BE MOVED TO THE DEPARTURE TABLE
+    
+    addNewLastStopItemToState(lastStop) {
+       this.setState(prevState => {
+           // lastStop Element of prevState.lastStops ?
+           const index = getIndexOfLastStopArrayItem(lastStop, prevState.lastStops)
+           if (index >= 0) {
+              prevState.lastStops.splice(index, 1)
+           } else {
+              if (prevState.lastStops.length > 2) { prevState.lastStops.shift()}
+           }
+           return {lastStops : [...prevState.lastStops, lastStop]} 
+       });
+    }
+
     getDepartureArray(stop_id) {
 
         this.setState({
             departures: [],
             loadingDepartures: true
-            
+
         });
 
         axios({
@@ -44,19 +69,16 @@ class DepartureComponent extends Component {
             })
             .then(
                 (result) => {
-                    //SET state
-                    const lastStop = {
-                            "Haltestellenname": result.data.Haltestellenname,
-                            "VGNKennung": result.data.VGNKennung
-                        }
-                    // ERROR! DID NOT WORK!
-                    const updateStops = !this.state.lastStops.includes(lastStop)
-                    console.log(updateStops)
-                    this.setState((state, props) => ({
+                    this.setState({
                         loadingDepartures: false,
                         departures: result.data.Abfahrten,
-                        lastStops: updateStops ? [...state.lastStops, lastStop] : state.lastStops
-                        }))
+                    })
+                    const lastStop = {
+                        "Haltestellenname": result.data.Haltestellenname,
+                        "VGNKennung": result.data.VGNKennung
+                    }
+                    this.addNewLastStopItemToState(lastStop)
+
                 },
                 (error) => {
                     console.error(error);
@@ -68,13 +90,13 @@ class DepartureComponent extends Component {
         this.getDepartureArray(stop_id);
     }
 
-    toggleButton() {
-        this.setState(prevState => ({
-            button: !prevState.button
-        }));
-    }
-    
-    handleSearchStop(e, id){
+    // toggleButton() {
+    //     this.setState(prevState => ({
+    //         button: !prevState.button
+    //     }));
+    // }
+
+    handleSearchStop(e, id) {
         e.preventDefault();
         this.getDepartureArray(id)
     }

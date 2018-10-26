@@ -37,7 +37,7 @@ class LastStops extends Component {
    
     
     render() {
-      const lastStops = this.props.lastStops
+      const lastStops = [...this.props.lastStops].reverse() //
      
       const output = lastStops.length > 0 ? formatOutput(lastStops,this.props.searchStop) : null
       return output
