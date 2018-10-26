@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import Autosuggest from 'react-autosuggest';
 import './SearchStopField.css'
-import LoadingSpinner from './LoadingSpinner.js'
+import FormLoadingSpinner from './FormLoadingSpinner.js'
 
 /* ----------------- */
 /*    Helper Methods */
@@ -44,22 +44,15 @@ const shouldRenderSuggestions = value => value.trim().length > 2;
 class SearchStopField extends Component {
     constructor() {
         super();
-
-        // Autosuggest is a controlled component.
-        // This means that you need to provide an input value
-        // and an onChange handler that updates this value (see below).
-        // Suggestions also need to be provided to the Autosuggest,
-        // and they are initially empty because the Autosuggest is closed.
         this.state = {
             value: '',
             suggestions: [],
             isLoading: false
         };
-        // this.onSuggestionSelected = this.onSuggestionSelected.bind(this) ????
     }
 
     onSuggestionSelected = (event, { suggestion }) => {
-       this.props.handleNewSelectedStop(suggestion.VGNKennung);
+        this.props.handleNewSelectedStop(suggestion.VGNKennung);
     }
 
     onChange = (event, { newValue }) => {
@@ -69,11 +62,9 @@ class SearchStopField extends Component {
     };
 
     getStopArray(term) {
-
         this.setState({
             isLoading: true
         });
-
         axios.get('https://start.vag.de/dm/api/haltestellen.json/vgn', {
                 params: {
                     name: term,
@@ -86,14 +77,11 @@ class SearchStopField extends Component {
                         isLoading: false
                     });
                 },
-               
                 (error) => {
                     console.error(error);
                 }
             );
     }
-
-
 
     getSuggestions(value) {
         const inputValue = escapeRegexCharacters(value.trim().toLowerCase());
@@ -109,13 +97,10 @@ class SearchStopField extends Component {
         }
     };
 
-    // Autosuggest will call this function every time you need to update suggestions.
-    // You already implemented this logic above, so just use it.
     onSuggestionsFetchRequested = ({ value }) => {
         this.getSuggestions(value)
     };
 
-    // Autosuggest will call this function every time you need to clear suggestions.
     onSuggestionsClearRequested = () => {
         this.setState({
             suggestions: []
@@ -124,8 +109,6 @@ class SearchStopField extends Component {
 
     render() {
         const { value, suggestions, isLoading } = this.state;
-
-        // Autosuggest will pass through all these props to the input.
         const inputProps = {
             placeholder: 'Search for stops',
             value,
@@ -133,9 +116,6 @@ class SearchStopField extends Component {
             onChange: this.onChange,
         };
 
-
-        //
-        // Finally, render it!
         return (
             <div className="SearchStopField">
         <Autosuggest
@@ -149,7 +129,7 @@ class SearchStopField extends Component {
           shouldRenderSuggestions={shouldRenderSuggestions}
           renderInputComponent={renderInputComponent}
         />
-      <LoadingSpinner isLoading={isLoading} />
+      <FormLoadingSpinner isLoading={isLoading} />
       </div>
         );
     }

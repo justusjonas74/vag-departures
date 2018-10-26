@@ -38,3 +38,8 @@
 .departureRow .departureDelay.isInTime {
     color: green;
 }
+
+.deapartureContainer h3 {
+    line-height: 1;
+    margin-bottom: 1rem;
+}
