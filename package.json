@@ -12,7 +12,7 @@
     "react-autosuggest": "^9.3.2",
     "react-dom": "^16.6.0",
     "react-github-corner": "^2.1.0",
-    "react-scripts": "^2.0.5",
+    "react-scripts": "2.1.1",
     "strftime": "^0.10.0"
   },
   "scripts": {
