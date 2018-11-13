@@ -15,6 +15,7 @@ You need [Node.js](https://nodejs.org/) installed on your machine.
 
 ```
 git clone https://github.com/justusjonas74/vag-departures
+cd vag-departures
 npm install
 npm start
 ```
