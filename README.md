@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/justusjonas74/vag-departures.svg?branch=master)](https://travis-ci.org/justusjonas74/vag-departures)
+
 # VAG Departures
 
 This is a tiny web app, which helped me to learn [React](https://reactjs.org) and consuming an API  ([VAG Nürnberg](https://opendata.vag.de/dataset/api-echtzeitauskunft)).
