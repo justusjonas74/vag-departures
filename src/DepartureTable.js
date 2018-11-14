@@ -96,7 +96,7 @@ class DepartureRow extends Component {
             departureTransitType={this.props.departureTransitType}
           />
           <td><span className="departureDirection">{this.props.departureDirection}</span></td>
-        </tr>
+      </tr>
     )
   }
 }
@@ -114,22 +114,19 @@ class DepartureTable extends Component {
     const rows = [];
     const departures = this.props.departures;
     const stopName = this.props.Haltestellenname
-    departures.forEach((item, index) => {
-      const delay = checkDepartureDelay(item.AbfahrtszeitSoll, item.AbfahrtszeitIst);
-      rows.push(
-        <DepartureRow
-            departureTime={convertHourMinute(item.AbfahrtszeitSoll)}
-            delay={delay}
-            departureDirection={item.Richtungstext}
-            departureLine={item.Linienname}
-            departureTransitType={item.Produkt}
-            key={index}/>
-      )
-    })
-    if (departures.length < 1) {
-      return null
-    }
-    else {
+    if (typeof departures !== 'undefined' && departures.length > 0) {
+      departures.forEach((item, index) => {
+        const delay = checkDepartureDelay(item.AbfahrtszeitSoll, item.AbfahrtszeitIst);
+        rows.push(
+          <DepartureRow
+              departureTime={convertHourMinute(item.AbfahrtszeitSoll)}
+              delay={delay}
+              departureDirection={item.Richtungstext}
+              departureLine={item.Linienname}
+              departureTransitType={item.Produkt}
+              key={index}/>
+        )
+      })
       return (
         <div className="deapartureContainer">
             <div className='btn-toolbar pull-right'>
@@ -152,8 +149,9 @@ class DepartureTable extends Component {
             </table>
           </div>
       )
+    } else {
+      return null
     }
-
   }
 }
 
