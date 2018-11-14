@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/justusjonas74/vag-departures.svg?branch=master)](https://travis-ci.org/justusjonas74/vag-departures)
+[![Coverage Status](https://coveralls.io/repos/github/justusjonas74/vag-departures/badge.svg)](https://coveralls.io/github/justusjonas74/vag-departures)
 
 # VAG Departures
 
