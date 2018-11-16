@@ -39,10 +39,10 @@ class LineTransitType extends Component {
     const typeStyles = this.styleTransitType(departureTransitType);
 
     return (
-      <td>
-        <span className="departureTransitType"><i className={'fa ' + typeStyles.symbolStr} aria-hidden="true"></i>
-        <span className={'departureLine '+ typeStyles.cssClass}>{departureLine}</span></span>
-      </td>
+        <span className="departureTransitType">
+          <i className={'fa ' + typeStyles.symbolStr} aria-hidden="true"></i>
+          <span className={'departureLine '+ typeStyles.cssClass}>{departureLine}</span>
+        </span>
     )
   }
 }
