@@ -3,10 +3,10 @@ import axios from 'axios';
 import ls from 'local-storage'
 import './DepartureComponent.css'
 
-import LoadingSpinner from './LoadingSpinner'
-import SearchStopField from './SearchStopField'
-import DepartureTable from './DepartureTable'
-import LastStops from './LastStops'
+import LoadingSpinner from '../LoadingSpinner/LoadingSpinner'
+import SearchStopField from '../SearchStopField/SearchStopField'
+import DepartureTable from '../DepartureTable/DepartureTable'
+import LastStops from '../LastStops/LastStops'
 
 const getIndexOfLastStopArrayItem = (stop, arr) => {
     return arr.findIndex(s => s.VGNKennung === stop.VGNKennung)

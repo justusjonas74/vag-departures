@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import './DepartureTable.css';
-import DepartureRow from './DepartureRow';
+import DepartureRow from '../DepartureRow/DepartureRow';
 var strftime = require('strftime');
 // TODO: REPLACE strftime with moment.js!
 

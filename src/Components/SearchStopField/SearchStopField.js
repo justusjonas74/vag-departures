@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import axios from 'axios';
 import Autosuggest from 'react-autosuggest';
 import './SearchStopField.css'
-import FormLoadingSpinner from './FormLoadingSpinner.js'
+import FormLoadingSpinner from '../FormLoadingSpinner/FormLoadingSpinner'
 
 /* ----------------- */
 /*    Helper Methods */

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import GithubCorner from 'react-github-corner';
-import DepartureComponent from './DepartureComponent'
+import DepartureComponent from './DepartureComponent/DepartureComponent'
 
 class App extends Component {
     render() {

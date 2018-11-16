@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import './DepartureRow.css';
 
-import LineTransitType from './LineTransitType';
+import LineTransitType from '../LineTransitType/LineTransitType';
 
 /* ----------------- */
 /*    EXPORTS        */
