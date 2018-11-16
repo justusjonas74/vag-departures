@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import axios from 'axios';
 import Autosuggest from 'react-autosuggest';
 import './SearchStopField.css'
@@ -129,10 +130,14 @@ class SearchStopField extends Component {
           shouldRenderSuggestions={shouldRenderSuggestions}
           renderInputComponent={renderInputComponent}
         />
-      <FormLoadingSpinner isLoading={isLoading} />
+      { isLoading ? <FormLoadingSpinner /> : null}
       </div>
         );
     }
+}
+
+SearchStopField.props = {
+    handleNewSelectedStop: PropTypes.func
 }
 
 export default SearchStopField

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import './LastStops.css';
 
 function StopListItem(props) {
@@ -31,6 +32,11 @@ class LastStops extends Component {
     const output = lastStops.length > 0 ? formatOutput(lastStops, this.props.searchStop) : null
     return output
   }
+}
+
+LastStops.props = {
+  lastStops: PropTypes.array,
+  searchStop: PropTypes.func
 }
 
 export default LastStops;
