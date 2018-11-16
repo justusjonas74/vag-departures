@@ -18,11 +18,14 @@ class DepartureRow extends Component {
       <tr className="departureRow">
           <td>
             <span className="departureTime">{this.props.departureTime}</span>
-            <span className={"departureDelay " + cssDelayClass} >+{this.props.delay ? this.props.delay.time : "0"} </span></td>
-          <LineTransitType
-            departureLine={this.props.departureLine}
-            departureTransitType={this.props.departureTransitType}
-          />
+            <span className={"departureDelay " + cssDelayClass} >+{this.props.delay ? this.props.delay.time : "0"} </span>
+          </td>
+          <td>
+            <LineTransitType
+              departureLine={this.props.departureLine}
+              departureTransitType={this.props.departureTransitType}
+            />
+            </td>
           <td><span className="departureDirection">{this.props.departureDirection}</span></td>
       </tr>
     )
