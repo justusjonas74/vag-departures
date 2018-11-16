@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import './DepartureTable.css';
+import DepartureRow from './DepartureRow';
 var strftime = require('strftime');
 // TODO: REPLACE strftime with moment.js!
 
@@ -15,7 +17,6 @@ function convertHourMinute(value) {
     return '?'
   }
 }
-
 
 function checkDepartureDelay(datePlannedStr, dateRealStr) {
   const datePlanned = new Date(datePlannedStr),
@@ -35,78 +36,11 @@ function checkDepartureDelay(datePlannedStr, dateRealStr) {
       time: output
     }
   }
-
 }
-
-
-/* ----------------- */
-/*    SUB COMPONENTS */
-/* ----------------- */
-class LineTransitTypeComponent extends Component {
-  styleTransitType(departureTransitType) {
-    switch (departureTransitType.toLowerCase()) {
-      case 'ubahn':
-        return {
-          cssClass: 'ubahn',
-          symbolStr: 'fa-train'
-        };
-      case 'tram':
-        return {
-          cssClass: 'tram',
-          symbolStr: 'fa-subway'
-        };
-      case 'bus':
-        return {
-          cssClass: 'bus',
-          symbolStr: 'fa-bus'
-        };
-      default:
-        return {
-          cssClass: 'bus',
-          symbolStr: 'fa-bus'
-        };
-    }
-  }
-
-  render() {
-    const departureLine = this.props.departureLine
-    const departureTransitType = this.props.departureTransitType;
-    const typeStyles = this.styleTransitType(departureTransitType);
-
-    return (
-      <td>
-        <span className="departureTransitType"><i className={'fa ' + typeStyles.symbolStr} aria-hidden="true"></i>
-        <span className={'departureLine '+ typeStyles.cssClass}>{departureLine}</span></span>
-      </td>
-    )
-  }
-}
-
-
-class DepartureRow extends Component {
-
-  render() {
-    return (
-      <tr className="departureRow">
-          <td>
-            <span className="departureTime">{this.props.departureTime}</span>
-            <span className={"departureDelay " + (this.props.delay.isDelayed ? 'isDelayed' : 'isInTime')} >+{this.props.delay.time} </span></td>
-          <LineTransitTypeComponent
-            departureLine={this.props.departureLine}
-            departureTransitType={this.props.departureTransitType}
-          />
-          <td><span className="departureDirection">{this.props.departureDirection}</span></td>
-      </tr>
-    )
-  }
-}
-
 
 /* ----------------- */
 /*    EXPORTS        */
 /* ----------------- */
-
-
 
 class DepartureTable extends Component {
   // <i className="fa fa-map-marker" aria-hidden="true"></i>
@@ -153,6 +87,12 @@ class DepartureTable extends Component {
       return null
     }
   }
+}
+
+DepartureTable.propTypes = {
+  departures: PropTypes.array,
+  Haltestellenname: PropTypes.string,
+  newSearchButtonFn: PropTypes.func 
 }
 
 export default DepartureTable
