@@ -104,10 +104,14 @@ class DepartureComponent extends Component {
             { this.state.showSearchStopField ? <SearchStopField handleNewSelectedStop={this.handleNewSelectedStop} /> : null }
             { this.state.showSearchStopField ? <LastStops lastStops={this.state.lastStops} searchStop={this.handleSearchStop.bind(this)} /> : null }
             <DepartureTable departures={departures} Haltestellenname={stopName} newSearchButtonFn={this.newSearchButtonClicked.bind(this)}/>
-            <LoadingSpinner show={this.state.loadingDepartures} />
+            { this.state.loadingDepartures ? <LoadingSpinner /> : null}
           </div>
         )
     }
+}
+
+DepartureComponent.props = {
+    
 }
 
 export default DepartureComponent;
