@@ -1,5 +1,45 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`DepartureRow Component should render correctly with all props renders correctly 1`] = `
+Array [
+  <td>
+    <span
+      className="departureTime"
+    >
+      12:12
+    </span>
+    <span
+      className="departureDelay isInTime"
+    >
+      +
+      0
+    </span>
+  </td>,
+  <td>
+    <span
+      className="departureTransitType"
+    >
+      <i
+        aria-hidden="true"
+        className="fa fa-train"
+      />
+      <span
+        className="departureLine ubahn"
+      >
+        U1
+      </span>
+    </span>
+  </td>,
+  <td>
+    <span
+      className="departureDirection"
+    >
+      Langwasser
+    </span>
+  </td>,
+]
+`;
+
 exports[`DepartureRow Component the rendered table row renders correctly 1`] = `
 Array [
   <td>

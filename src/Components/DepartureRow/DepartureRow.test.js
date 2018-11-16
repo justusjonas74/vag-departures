@@ -109,5 +109,11 @@ describe('DepartureRow Component', () => {
       const direction = element.find('.departureDirection').text()
       expect(direction).toEqual('Langwasser')
     })
+    it('renders correctly', () => {
+       const tree = renderer
+        .create(<DepartureRow {...props} />)
+        .toJSON();
+      expect(tree).toMatchSnapshot();
+    });
   })
 })
