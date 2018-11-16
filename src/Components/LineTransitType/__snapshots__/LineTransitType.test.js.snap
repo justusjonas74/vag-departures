@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LineTransitType should render ubahn correctly renders correctly 1`] = `
+<span
+  className="departureTransitType"
+>
+  <i
+    aria-hidden="true"
+    className="fa fa-train"
+  />
+  <span
+    className="departureLine ubahn"
+  >
+    68
+  </span>
+</span>
+`;
+
+exports[`LineTransitType when props are defined should render bus correctly renders correctly 1`] = `
+<span
+  className="departureTransitType"
+>
+  <i
+    aria-hidden="true"
+    className="fa fa-bus"
+  />
+  <span
+    className="departureLine bus"
+  >
+    68
+  </span>
+</span>
+`;
+
+exports[`LineTransitType when props are defined should render tram correctly renders correctly 1`] = `
+<span
+  className="departureTransitType"
+>
+  <i
+    aria-hidden="true"
+    className="fa fa-subway"
+  />
+  <span
+    className="departureLine tram"
+  >
+    68
+  </span>
+</span>
+`;

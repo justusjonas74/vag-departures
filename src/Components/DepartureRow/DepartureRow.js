@@ -15,10 +15,10 @@ class DepartureRow extends Component {
       cssDelayClass = (this.props.delay.isDelayed ? 'isDelayed' : 'isInTime')
     }
     return (
-      <tr className="departureRow">
+      <React.Fragment>
           <td>
             <span className="departureTime">{this.props.departureTime}</span>
-            <span className={"departureDelay " + cssDelayClass} >+{this.props.delay ? this.props.delay.time : "0"} </span>
+            <span className={"departureDelay " + cssDelayClass} >+{this.props.delay ? this.props.delay.time : "0"}</span>
           </td>
           <td>
             <LineTransitType
@@ -27,7 +27,8 @@ class DepartureRow extends Component {
             />
             </td>
           <td><span className="departureDirection">{this.props.departureDirection}</span></td>
-      </tr>
+      
+      </React.Fragment>
     )
   }
 }

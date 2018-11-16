@@ -1,5 +1,6 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
+import renderer from 'react-test-renderer';
 import LineTransitType from './LineTransitType';
 
 describe('LineTransitType', () => {
@@ -54,6 +55,12 @@ describe('LineTransitType', () => {
         const iElement = mountedLineTransitType.find("i.fa")
         expect(iElement.hasClass("fa-bus")).toEqual(true)
       })
+      it('renders correctly', () => {
+       const tree = renderer
+        .create(<LineTransitType {...props} />)
+        .toJSON();
+      expect(tree).toMatchSnapshot();
+      })
       
     })
     describe("should render tram correctly", ()=>{
@@ -66,6 +73,13 @@ describe('LineTransitType', () => {
         const iElement = mountedLineTransitType.find("i.fa")
         expect(iElement.hasClass("fa-subway")).toEqual(true)
       })
+    it('renders correctly', () => {
+       const tree = renderer
+        .create(<LineTransitType {...props} />)
+        .toJSON();
+      expect(tree).toMatchSnapshot();
+    })
+  });
       
     })
     describe("should render ubahn correctly", ()=>{
@@ -73,28 +87,17 @@ describe('LineTransitType', () => {
         props.departureLine = "68"
         props.departureTransitType = "UBahn"
       })
-      it('should render the correct line name', ()=>{
-        const mountedLineTransitType = lineTransitType()
-        const span = mountedLineTransitType.find('.departureLine')
-        // console.log('SPAN: ' + span.text())
-        expect(span.text()).toEqual('68')
-      })
       it('should render a correct symbol', ()=>{
         const mountedLineTransitType = lineTransitType()
         const iElement = mountedLineTransitType.find("i.fa")
         expect(iElement.hasClass("fa-train")).toEqual(true)
       })
-      
-    })
+      it('renders correctly', () => {
+        const tree = renderer
+          .create(<LineTransitType {...props} />)
+          .toJSON();
+        expect(tree).toMatchSnapshot();
+      })
   })
-  // SNAPSHOT TESTS
   
 });
-
-
-
-//TEST DATA
-// <LineTransitType
-//             departureLine={this.props.departureLine}
-//             departureTransitType={this.props.departureTransitType}
-//           />

@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DepartureRow Component the rendered table row renders correctly 1`] = `
+Array [
+  <td>
+    <span
+      className="departureTime"
+    />
+    <span
+      className="departureDelay isInTime"
+    >
+      +
+      0
+    </span>
+  </td>,
+  <td>
+    <span
+      className="departureTransitType"
+    >
+      <i
+        aria-hidden="true"
+        className="fa fa-bus"
+      />
+      <span
+        className="departureLine bus"
+      />
+    </span>
+  </td>,
+  <td>
+    <span
+      className="departureDirection"
+    />
+  </td>,
+]
+`;

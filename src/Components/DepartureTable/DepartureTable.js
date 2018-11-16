@@ -52,13 +52,15 @@ class DepartureTable extends Component {
       departures.forEach((item, index) => {
         const delay = checkDepartureDelay(item.AbfahrtszeitSoll, item.AbfahrtszeitIst);
         rows.push(
-          <DepartureRow
+          <tr className="departureRow">
+            <DepartureRow
               departureTime={convertHourMinute(item.AbfahrtszeitSoll)}
               delay={delay}
               departureDirection={item.Richtungstext}
               departureLine={item.Linienname}
               departureTransitType={item.Produkt}
               key={index}/>
+          </tr>
         )
       })
       return (
