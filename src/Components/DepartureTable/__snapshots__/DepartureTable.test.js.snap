@@ -1,0 +1,165 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DepartureTable Component with props should render correctly 1`] = `
+<div
+  className="deapartureContainer"
+>
+  <div
+    className="btn-toolbar pull-right"
+  >
+    <div
+      className="btn-group"
+    >
+      <button
+        className="btn btn-outline-secondary btn-sm"
+        onClick={null}
+        type="button"
+      >
+        <i
+          className="fa fa-search"
+        />
+         New Search
+      </button>
+    </div>
+  </div>
+  <h3>
+    Bauernfeindstr. (Nürnberg)
+  </h3>
+  <table
+    className="table table-striped<"
+  >
+    <thead>
+      <tr>
+        <th>
+          Time
+        </th>
+        <th>
+          Line
+        </th>
+        <th>
+          Direction
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr
+        className="departureRow"
+      >
+        <td>
+          <span
+            className="departureTime"
+          >
+            12:11
+          </span>
+          <span
+            className="departureDelay isInTime"
+          >
+            +
+            0
+          </span>
+        </td>
+        <td>
+          <span
+            className="departureTransitType"
+          >
+            <i
+              aria-hidden="true"
+              className="fa fa-train"
+            />
+            <span
+              className="departureLine ubahn"
+            >
+              U1
+            </span>
+          </span>
+        </td>
+        <td>
+          <span
+            className="departureDirection"
+          >
+            Langwasser Süd
+          </span>
+        </td>
+      </tr>
+      <tr
+        className="departureRow"
+      >
+        <td>
+          <span
+            className="departureTime"
+          >
+            12:12
+          </span>
+          <span
+            className="departureDelay isInTime"
+          >
+            +
+            0
+          </span>
+        </td>
+        <td>
+          <span
+            className="departureTransitType"
+          >
+            <i
+              aria-hidden="true"
+              className="fa fa-train"
+            />
+            <span
+              className="departureLine ubahn"
+            >
+              U1
+            </span>
+          </span>
+        </td>
+        <td>
+          <span
+            className="departureDirection"
+          >
+            Fürth Hardhöhe
+          </span>
+        </td>
+      </tr>
+      <tr
+        className="departureRow"
+      >
+        <td>
+          <span
+            className="departureTime"
+          >
+            12:16
+          </span>
+          <span
+            className="departureDelay isInTime"
+          >
+            +
+            0
+          </span>
+        </td>
+        <td>
+          <span
+            className="departureTransitType"
+          >
+            <i
+              aria-hidden="true"
+              className="fa fa-bus"
+            />
+            <span
+              className="departureLine bus"
+            >
+              93
+            </span>
+          </span>
+        </td>
+        <td>
+          <span
+            className="departureDirection"
+          >
+            Kornburg
+          </span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;

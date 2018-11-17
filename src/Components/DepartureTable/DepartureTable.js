@@ -46,8 +46,8 @@ class DepartureTable extends Component {
   // <i className="fa fa-map-marker" aria-hidden="true"></i>
   render() {
     const rows = [];
-    const departures = this.props.departures;
-    const stopName = this.props.Haltestellenname
+    const departures = this.props.departures ? this.props.departures : [];
+    const stopName = this.props.Haltestellenname ? this.props.Haltestellenname : ""
     if (typeof departures !== 'undefined' && departures.length > 0) {
       departures.forEach((item, index) => {
         const delay = checkDepartureDelay(item.AbfahrtszeitSoll, item.AbfahrtszeitIst);
