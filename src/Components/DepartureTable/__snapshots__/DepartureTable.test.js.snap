@@ -49,7 +49,7 @@ exports[`DepartureTable Component with props should render correctly 1`] = `
           <span
             className="departureTime"
           >
-            12:11
+            13:11
           </span>
           <span
             className="departureDelay isInTime"
@@ -88,7 +88,7 @@ exports[`DepartureTable Component with props should render correctly 1`] = `
           <span
             className="departureTime"
           >
-            12:12
+            13:12
           </span>
           <span
             className="departureDelay isInTime"
@@ -127,7 +127,7 @@ exports[`DepartureTable Component with props should render correctly 1`] = `
           <span
             className="departureTime"
           >
-            12:16
+            13:16
           </span>
           <span
             className="departureDelay isInTime"
