@@ -18,7 +18,7 @@ function convertHourMinute(value) {
   // else {
   //   return '?'
   // }
-  return moment(value).format('HH:mm')
+  return moment.parseZone(value).format('HH:mm')
 }
 
 function checkDepartureDelay(datePlannedStr, dateRealStr) {
