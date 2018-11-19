@@ -54,6 +54,56 @@ const response = {
     "Prognose": true
   }]
 }
+const response_delayed = {
+  "Metadata": {
+    "Version": "Puls-API-v1.1",
+    "Timestamp": "2018-11-16T13:07:09+01:00"
+  },
+  "Haltestellenname": "Bauernfeindstr. (Nürnberg)",
+  "VAGKennung": "BAUERN,BA",
+  "VGNKennung": 1550,
+  "Abfahrten": [{
+    "Linienname": "U1",
+    "Haltepunkt": "BA:2",
+    "Richtung": "Richtung1",
+    "Richtungstext": "Langwasser Süd",
+    "AbfahrtszeitSoll": "2018-11-16T13:11:29+01:00",
+    "AbfahrtszeitIst": "2018-11-16T13:15:29+01:00",
+    "Produkt": "UBahn",
+    "Longitude": 11.10790611,
+    "Latitude": 49.41769389,
+    "Fahrtnummer": 1005407,
+    "Fahrtartnummer": 1,
+    "Prognose": false
+  }, {
+    "Linienname": "U1",
+    "Haltepunkt": "BA:1",
+    "Richtung": "Richtung2",
+    "Richtungstext": "Fürth Hardhöhe",
+    "AbfahrtszeitSoll": "2018-11-16T13:12:07+01:00",
+    "AbfahrtszeitIst": "2018-11-16T13:32:07+01:00",
+    "Produkt": "UBahn",
+    "Longitude": 11.10790611,
+    "Latitude": 49.41769389,
+    "Fahrtnummer": 1005744,
+    "Fahrtartnummer": 1,
+    "Prognose": false
+  }, {
+    "Linienname": "93",
+    "Haltepunkt": "BAUERN:6",
+    "Richtung": "Richtung1",
+    "Richtungstext": "Kornburg",
+    "AbfahrtszeitSoll": "2018-11-16T13:16:00+01:00",
+    "AbfahrtszeitIst": "2018-11-16T14:16:00+01:00",
+    "Produkt": "Bus",
+    "Longitude": 11.10790611,
+    "Latitude": 49.41769389,
+    "Fahrtnummer": 2039443,
+    "Fahrtartnummer": 1,
+    "Fahrzeugnummer": "551",
+    "Prognose": true
+  }]
+}
 describe('DepartureTable Component', () => {
   
   // BOILERPLATE
@@ -85,10 +135,25 @@ describe('DepartureTable Component', () => {
     expect(component).toBeNull();
   })
   
-  describe('with props', () => {
+  describe('with props (without delayed trips)', () => {
     beforeEach(()=>{
       props.departures = response.Abfahrten
       props.Haltestellenname = response.Haltestellenname
+    })
+    
+    it('should render correctly', () => {
+       const tree = renderer
+        .create(<DepartureTable {...props} />)
+        .toJSON();
+      expect(tree).toMatchSnapshot();
+    });
+    
+  })
+  
+  describe('with delay', () => {
+    beforeEach(()=>{
+      props.departures = response_delayed.Abfahrten
+      props.Haltestellenname = response_delayed.Haltestellenname
     })
     
     it('should render correctly', () => {
