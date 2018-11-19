@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LastStops Component it should always render correctly 1`] = `null`;
+
+exports[`LastStops Component with props should render correctly 1`] = `
+<div
+  className="LastStopsContainer"
+>
+  <ul
+    className="list-inline"
+  >
+    <li
+      className="list-inline-item"
+    >
+      <button
+        className="btn btn-outline-secondary btn-sm"
+        onClick={[Function]}
+      >
+        Plärrer (Nürnberg)
+      </button>
+    </li>
+    <li
+      className="list-inline-item"
+    >
+      <button
+        className="btn btn-outline-secondary btn-sm"
+        onClick={[Function]}
+      >
+        Hauptbahnhof (Nürnberg)
+      </button>
+    </li>
+    <li
+      className="list-inline-item"
+    >
+      <button
+        className="btn btn-outline-secondary btn-sm"
+        onClick={[Function]}
+      >
+        Bauernfeindstr. (Nürnberg)
+      </button>
+    </li>
+  </ul>
+</div>
+`;
