@@ -11,7 +11,8 @@ describe('DepartureRow Component', () => {
   let mountedComponent;
   const departureRow = () => {
     if (!mountedComponent) {
-      mountedComponent = mount(
+      mountedComponent = shallow(
+     // mountedComponent = mount(
         <DepartureRow {...props} />
       );
     }

@@ -2,20 +2,23 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import './DepartureTable.css';
 import DepartureRow from '../DepartureRow/DepartureRow';
-var strftime = require('strftime');
+// var strftime = require('strftime');
+import moment from 'moment'
 // TODO: REPLACE strftime with moment.js!
 
 /* ----------------- */
 /*    Helper Methods */
 /* ----------------- */
 function convertHourMinute(value) {
-  const date = new Date(value);
-  if (date) {
-    return strftime('%H:%M', date);
-  }
-  else {
-    return '?'
-  }
+  // const date = new Date(value);
+  // const date = moment(value);
+  // if (date) {
+  //   return strftime('%H:%M', date);
+  // }
+  // else {
+  //   return '?'
+  // }
+  return moment.parseZone(value).format('HH:mm')
 }
 
 function checkDepartureDelay(datePlannedStr, dateRealStr) {
@@ -46,13 +49,13 @@ class DepartureTable extends Component {
   // <i className="fa fa-map-marker" aria-hidden="true"></i>
   render() {
     const rows = [];
-    const departures = this.props.departures;
-    const stopName = this.props.Haltestellenname
+    const departures = this.props.departures ? this.props.departures : [];
+    const stopName = this.props.Haltestellenname ? this.props.Haltestellenname : ""
     if (typeof departures !== 'undefined' && departures.length > 0) {
       departures.forEach((item, index) => {
         const delay = checkDepartureDelay(item.AbfahrtszeitSoll, item.AbfahrtszeitIst);
         rows.push(
-          <tr className="departureRow">
+          <tr className="departureRow" key={index}>
             <DepartureRow
               departureTime={convertHourMinute(item.AbfahrtszeitSoll)}
               delay={delay}
