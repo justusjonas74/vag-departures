@@ -62,7 +62,7 @@ describe('DepartureTable Component', () => {
   const departureTable = () => {
     if (!mountedComponent) {
       // mountedComponent = mount(
-      mountedComponent = shallow(
+      mountedComponent = mount(
         <DepartureTable {...props} />
       );
     }
