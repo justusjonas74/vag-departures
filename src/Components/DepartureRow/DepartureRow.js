@@ -36,8 +36,8 @@ class DepartureRow extends Component {
 DepartureRow.propTypes = {
   departureTime: PropTypes.string,
   delay:  PropTypes.shape({
-    time: PropTypes.num,
-    isDelayed: PropTypes.boolean
+    time: PropTypes.number,
+    isDelayed: PropTypes.bool
   }),
   departureLine: PropTypes.string,
   departureTransitType: PropTypes.string,
