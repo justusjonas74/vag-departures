@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/vag-departures/static/css/main.7c006215.chunk.css",
+    "main.js": "/vag-departures/static/js/main.0d4d56c0.chunk.js",
+    "main.js.map": "/vag-departures/static/js/main.0d4d56c0.chunk.js.map",
+    "runtime~main.js": "/vag-departures/static/js/runtime~main.34e43f60.js",
+    "runtime~main.js.map": "/vag-departures/static/js/runtime~main.34e43f60.js.map",
+    "static/css/2.1e66eaca.chunk.css": "/vag-departures/static/css/2.1e66eaca.chunk.css",
+    "static/js/2.7f4f3bf7.chunk.js": "/vag-departures/static/js/2.7f4f3bf7.chunk.js",
+    "static/js/2.7f4f3bf7.chunk.js.map": "/vag-departures/static/js/2.7f4f3bf7.chunk.js.map",
+    "index.html": "/vag-departures/index.html",
+    "precache-manifest.56a17c193aa4d3256ee1680440bddf9f.js": "/vag-departures/precache-manifest.56a17c193aa4d3256ee1680440bddf9f.js",
+    "service-worker.js": "/vag-departures/service-worker.js",
+    "static/css/2.1e66eaca.chunk.css.map": "/vag-departures/static/css/2.1e66eaca.chunk.css.map",
+    "static/css/main.7c006215.chunk.css.map": "/vag-departures/static/css/main.7c006215.chunk.css.map",
+    "static/media/index.css": "/vag-departures/static/media/doodles.86377fca.png"
+  }
+}
